@@ -117,8 +117,7 @@ Bu nedenle Sprint 1 ürün durumu kapsamında ürünün ilk taslak arayüzü / w
 
 ### Ürün Görselleri
 
-> Buraya sprint board değil, uygulamanızın ekran tasarımı veya wireframe görseli gelmeli.  
-> Örneğin: ana sayfa tasarımı, toplantı notu giriş ekranı, AI özet sonuç ekranı.
+
 
 <img width="1558" height="968" alt="image" src="https://github.com/user-attachments/assets/2ba200b1-b191-48e1-962a-603bfd2b3e77" />
 <img width="1568" height="897" alt="image" src="https://github.com/user-attachments/assets/c12b0e2e-19a9-438a-a14a-2cc2284a0ae7" />
