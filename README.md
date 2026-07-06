@@ -1,4 +1,4 @@
-<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/02132cc9-3d55-496b-adc2-433cbbe46d52" /># Yapay Zeka Destekli Toplantı Notları Uygulaması
+# Yapay Zeka Destekli Toplantı Notları Uygulaması
 
 ## Takım İsmi
 Takım 55
