@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 38 23% 87%;        /* #E4E0D8 krem */
+  --foreground: 0 0% 4%;            /* #0A0A0A siyah */
+  --card: 38 23% 90%;               /* biraz daha açık krem */
+  --card-foreground: 0 0% 4%;
+  --card-border: 0 0% 0% / 0.08;
+  --primary: 249 87% 69%;           /* #7C6AF5 lavender */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 38 23% 82%;          /* koyu krem */
+  --secondary-foreground: 0 0% 4%;
+  --muted: 38 23% 80%;
+  --muted-foreground: 0 0% 30%;
+  --accent: 72 100% 57%;            /* #CCFF2A lime-sarı */
+  --accent-foreground: 0 0% 4%;
+  --border: 0 0% 0% / 0.1;
+  --input: 0 0% 0% / 0.08;
+  --ring: 249 87% 69%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground;
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Geniş tipografi */
+.display-xl {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 12vw, 14rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: #7C6AF5;
+}
+.display-lg {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 7vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #0A0A0A;
+}
+.section-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #0A0A0A;
+  opacity: 0.4;
+}
+
+/* Blob şekiller */
+.blob-purple {
+  background: #7C6AF5;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.blob-clip-left {
+  background: #7C6AF5;
+  clip-path: polygon(0 0, 55% 0, 100% 100%, 0 100%);
+}
+.blob-clip-right {
+  background: #7C6AF5;
+  clip-path: polygon(45% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Lime buton */
+.btn-lime {
+  background: #CCFF2A;
+  color: #0A0A0A;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-lime:hover {
+  background: #D8FF45;
+  transform: scale(1.02);
+}
+
+/* Mor buton */
+.btn-purple {
+  background: #7C6AF5;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-purple:hover {
+  background: #6A57E8;
+}
+
+/* Outline dark buton */
+.btn-dark-outline {
+  background: #0A0A0A;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+.btn-dark-outline:hover {
+  background: #222222;
+  transform: scale(1.02);
+}
+
+/* Yatay ayırıcı çizgi */
+.divider {
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+/* Kart */
+.ivent-card {
+  background: #E4E0D8;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s;
+}
+.ivent-card:hover {
+  background: #7C6AF5;
+  color: white;
+  border-color: #7C6AF5;
+}
+.ivent-card:hover h3,
+.ivent-card:hover p { color: white; }
+.ivent-card:hover .icon-box { color: white; }

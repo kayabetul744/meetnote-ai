@@ -160,3 +160,31 @@ Alınan kararlar:
 - Daily Scrum notları daha düzenli tutulmalıdır.
 - Sprint 2’de geliştirme ve ürün çıktısına daha fazla odaklanılmalıdır.
 - Frontend, backend ve yapay zeka görevleri daha net ayrılmalıdır.
+
+---
+
+# Kod Yapısı ve Kurulum
+
+## Klasörler
+- `meetnote-ai/` — React + Vite frontend (site arayüzü)
+- `api-server/` — Express backend (`/api/analyze` uç noktası, toplantı metnini analiz eder)
+
+## Kurulum
+
+```bash
+# Frontend
+cd meetnote-ai
+npm install
+npm run dev   # http://localhost:5173
+
+# Backend (ayrı bir terminalde)
+cd api-server
+npm install
+cp .env.example .env
+npm run dev   # http://localhost:8080
+```
+
+Frontend, Vite dev proxy ile `/api/*` isteklerini otomatik olarak backend'e yönlendirir.
+
+## Yapay Zeka Motoru
+`api-server`, `GEMINI_API_KEY` tanımlıysa Google Gemini (ücretsiz katman) kullanır. Anahtar tanımlı değilse veya Gemini isteği başarısız olursa, sunucu üzerinde çalışan kendi NLP motorumuza (`api-server/src/lib/textAnalyzer.ts`) otomatik olarak geçer — hiçbir dış servise bağımlı olmadan, tamamen ücretsiz çalışır. Ücretsiz bir Gemini anahtarı almak için `api-server/README.md` dosyasına bakın.
