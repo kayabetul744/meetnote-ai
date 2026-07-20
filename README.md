@@ -145,7 +145,7 @@ Bu nedenle Sprint 1 ürün durumu kapsamında ürünün ilk taslak arayüzü / w
 
 <img width="1738" height="999" alt="image" src="https://github.com/user-attachments/assets/c2f5cae5-6fa5-4c0c-8d09-3f9b53fb81a3" />
 
-*Yukarıdaki görseller Sprint 1'deki ilk taslak/wireframe çalışmasına aittir. Sprint 2'de geliştirilen güncel ürünün ekran görüntüleri için bkz. [Güncel Ürün Görselleri](#güncel-ürün-görselleri-sprint-2).*
+*Yukarıdaki görseller Sprint 1'deki ilk taslak/wireframe çalışmasına aittir. Sprint 2'de geliştirilen güncel ürünün ekran görüntüleri için bkz. [Sprint 2 → Ürün Görselleri](#sprint-2).*
 
 ---
 
@@ -185,15 +185,51 @@ Alınan kararlar:
 
 ---
 
-# Güncel Ürün Görselleri (Sprint 2)
+# Sprint 2
 
-Sprint 1'deki wireframe'lerden geliştirilen, [meetnote.site](https://meetnote.site) adresinde canlı yayında olan güncel ürünün ekran görüntüleri.
+## Sprint Notları
+Sprint 1'de belirlenen hedef doğrultusunda, Sprint 2 kapsamında ürünün gerçek bir web uygulaması olarak geliştirilmesine, yapay zeka entegrasyonunun tamamlanmasına ve canlı ortama alınmasına odaklanılmıştır. Bu sprintte planlama aşamasından çıkılıp uçtan uca çalışan bir ürün ortaya konmuştur.
+
+## Sprint 2 Goal
+Sprint 2'nin hedefi; frontend arayüzünün tamamlanması, toplantı metni analiz eden bir backend ve yapay zeka motorunun geliştirilmesi, ürünün kendi alan adında (meetnote.site) canlıya alınması ve teknik dokümantasyonun tamamlanmasıdır.
+
+## Sprint 2'de Tamamlanan İşler
+
+### Done
+- Frontend arayüzünün uçtan uca geliştirilmesi ve düzeltilmesi (responsive hatalar, tipografi, ekip bölümü, tanıtım videosu)
+- Ürünün rakiplerinden farkını ortaya koyan "Farkımız" bölümünün tasarlanıp eklenmesi
+- Backend geliştirme (Node.js + Express) ve `/api/analyze` uç noktasının oluşturulması
+- Yapay zeka motorunun geliştirilmesi: Google Gemini entegrasyonu ve dış servise bağımlı olmayan, ücretsiz çalışan yerel NLP motoru (otomatik geçişli)
+- Ürünün Vercel (frontend) ve Render (backend) üzerinde, kendi alan adımızda (meetnote.site) canlıya alınması
+- Teknik dokümantasyonun (mimari, teknoloji yığını, kurulum) yazılması
+
+## Ürün Durumu
+Sprint 2 sonunda ürün, planlama aşamasından çıkıp **çalışan, canlı bir web uygulaması** haline gelmiştir. [meetnote.site](https://meetnote.site) adresinden gerçek bir toplantı metni girilerek özet, kararlar ve aksiyon maddeleri üretilebilmektedir.
+
+### Ürün Görselleri
 
 ![Hakkında bölümü](docs/images/screenshot-about.png)
 
 ![Özellikler bölümü](docs/images/screenshot-features.png)
 
 ![Nasıl çalışır bölümü](docs/images/screenshot-howitworks.png)
+
+![Farkımız bölümü](docs/images/screenshot-difference.png)
+
+![Canlı demo ekranı](docs/images/screenshot-demo.png)
+
+![Ekip bölümü](docs/images/screenshot-team.png)
+
+## Sprint Review
+Sprint 2 sonunda ekip, canlıya alınan ürünü birlikte değerlendirmiştir. Sprint 1'de hedeflenen "temel frontend ekranlarının ve yapay zeka entegrasyonunun geliştirilmesi" hedefine ulaşılmış, bunun ötesinde ürün production ortamına taşınarak gerçek kullanıcıların erişebileceği bir aşamaya getirilmiştir.
+
+## Sprint Retrospective
+Geliştirme sürecinde karşılaşılan önemli bir teknik zorluk, ücretsiz yapay zeka API anahtarı alım sürecinde yaşanan erişim engelidir. Bu durum, ekibi tek bir dış servise bağımlı kalmak yerine kendi sunucumuzda çalışan, hiçbir API anahtarı gerektirmeyen bir yerel analiz motoru geliştirmeye yöneltmiştir. Sonuç olarak ürün, dış servis kesintilerinden etkilenmeyen, daha dayanıklı ve sürdürülebilir bir mimariye kavuşmuştur.
+
+Alınan kararlar:
+- Kritik özellikler tek bir dış servise bağımlı kılınmamalı, yedek/fallback mekanizmaları tasarlanmalıdır.
+- Ürün erken aşamada canlı ortama alınmalı, gerçek koşullarda test edilmelidir.
+- Sonraki sprintte, ürünün "Farkımız" bölümünde vurgulanan toplantılar arası hafıza ve hesap verebilirlik özelliklerinin gerçek işlevlere dönüştürülmesi hedeflenmektedir.
 
 ---
 
